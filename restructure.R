@@ -53,9 +53,7 @@ readr::write_csv(dn, "made/db/nutrition.csv")
 ######################
 #### JSON OUTPUTS ####
 ######################
-d_item2 = lapply(1:nrow(dn), \(i) as.list(d_item[i,-1]))
-names(d_item2) = d_item$ID
-jsonlite::write_json(d_item2, "made/json/d_item.json", 
+jsonlite::write_json(d_item, "made/json/d_item.json", 
                      auto_unbox = T, pretty=T, na="null")
 
 
@@ -68,4 +66,6 @@ d_unit_vec = as.list(d_unit$UNIT_TYPE)
 names(d_unit_vec) = d_unit$ANALY_ITEM
 jsonlite::write_json(d_unit_vec, "made/json/d_unit_vec.json", 
                      auto_unbox = T, na="null")
+
+file.create(".nojekyll")
 
