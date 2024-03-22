@@ -13,6 +13,8 @@ names(d) = stom::as_vec("FOOD_TYPE, DATA_TYPE, ID, ITEM, COMMON_NAMES,
 d_item = d |> 
     select(ID, ITEM, COMMON_NAMES, ENGLISH_NAME, CONTENT_DESC, 
            DISPOSAL_RATE, PER_PORTION_WEIGHT, FOOD_TYPE, DATA_TYPE) |> 
+    mutate(PER_PORTION_WEIGHT = gsub("克", "", PER_PORTION_WEIGHT, fixed=T),
+           PER_PORTION_WEIGHT = as.numeric(PER_PORTION_WEIGHT)) |> 
     distinct()
 # glimpse(d_item)
 
