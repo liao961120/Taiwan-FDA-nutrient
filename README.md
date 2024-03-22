@@ -3,6 +3,7 @@ Taiwan-FDA-nutrient
 
 - <https://data.gov.tw/dataset/8543>
 - <https://consumer.fda.gov.tw/Food/TFND.aspx?nodeID=178>
+- 「國人膳食營養素參考攝取量」第八版: <https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=4248&pid=12285>
 
 
 ## Build
