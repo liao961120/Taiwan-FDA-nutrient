@@ -56,13 +56,14 @@ readr::write_csv(dn, "made/db/nutrition.csv")
 ######################
 #### JSON OUTPUTS ####
 ######################
+PRETTY = F
 jsonlite::write_json(d_item, "made/json/d_item.json", 
-                     auto_unbox = T, pretty=T, na="null")
+                     auto_unbox = T, pretty=PRETTY, na="null")
 
 
 dn_vec = lapply(1:nrow(dn), \(i) unlist(dn[i, -1]))
 names(dn_vec) = dn$ID
-jsonlite::write_json(dn_vec, "made/json/dn_vec.json", pretty=T, na="null")
+jsonlite::write_json(dn_vec, "made/json/dn_vec.json", pretty=PRETTY, na="null")
 jsonlite::write_json(colnames(dn)[-1], "made/json/dn_vec_ord.json", na="null")
 
 d_unit_vec = as.list(d_unit$UNIT_TYPE)
